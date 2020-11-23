@@ -21,7 +21,7 @@
       
             <div style='padding: 5px;'>    
                <button type='button' class="btn btn-primary" onClick="getData('CIT')">CIT</button> 
-               <button type='button' class="btn btn-primary" onClick="getData('Business')">Business</button> 
+               <button type='button' class="btn btn-primary" onClick="getData('BUS')">Business</button> 
             </div>
       
   
@@ -51,7 +51,7 @@
 
 	function getData(selected_meal) {
 		var request = new XMLHttpRequest();
-    	request.open('GET', 'menu_items.json');     // open the request
+    	request.open('GET', 'cit5students.json');     // open the request
 
     	request.onload = function() {
 
