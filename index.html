@@ -52,24 +52,25 @@
   <!-- application ajax code -->
 <script>
 
-	function getData(selected_meal) {
+	function getData(major_CIT) {
 		var request = new XMLHttpRequest();
     	request.open('GET', 'cit5students.json');     // open the request
 
     	request.onload = function() {
 
         	var data = JSON.parse(request.responseText);
-			meal_items = data.filter(getMeal)   // filter data for selected meal
+			
+		CIT = data.filter(getMajor)   // filter data for selected meal
 		
-			function getMeal(item) {
-            	return item.meal == selected_meal;
+		function getMajor(CIT) {
+            	return major.CIT == major_CIT;
         	}
 
         	if (request.status == 200) {
               	var templateText = document.getElementById('tableTemplate').innerHTML;
              	var compiledTemplateText = Handlebars.compile(templateText);   // get and compile template code
               	
-              	compiledHtml = compiledTemplateText({ rows: meal_items })      // apply data to template
+              	compiledHtml = compiledTemplateText({ rows: CIT })      // apply data to template
               	document.getElementById('menuTable').innerHTML = compiledHtml; 	
        	 	}
         	else {
