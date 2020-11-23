@@ -26,7 +26,7 @@
       
   
            <h3>We filter our dataset by major</h3>
-                <div id="menuTable"></div>
+                <div id="majorTable"></div>
                
      
      </div>   <!-- end class='container'   -->
@@ -54,13 +54,13 @@
 
 	function getData(major_CIT) {
 		var request = new XMLHttpRequest();
-    	request.open('GET', 'cit5students.json');     // open the request
+    	request.open('GET', 'cit5students.json');     
 
     	request.onload = function() {
 
         	var data = JSON.parse(request.responseText);
 			
-		CIT = data.filter(getMajor)   // filter data for selected meal
+		cit5students = data.filter(getMajor)   
 		
 		function getMajor(CIT) {
             	return major.CIT == major_CIT;
@@ -71,10 +71,10 @@
              	var compiledTemplateText = Handlebars.compile(templateText);   // get and compile template code
               	
               	compiledHtml = compiledTemplateText({ rows: CIT })      // apply data to template
-              	document.getElementById('menuTable').innerHTML = compiledHtml; 	
+              	document.getElementById('majorTable').innerHTML = compiledHtml; 	
        	 	}
         	else {
-            	document.querySelector('#menuTable').innerHTML = "There was an error, or menu items not found";
+            	document.querySelector('#majorTable').innerHTML = "There was an error, or menu items not found";
         	}
 		}
 
