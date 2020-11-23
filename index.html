@@ -7,7 +7,7 @@
     <h1>Select a Major</h1>
     
         
-    <input type="button" id='btn' value="CIT Majors"> <input type="button" id='btn2' value="CIT Majors"> 
+    <input type="button" id='btn' value="CIT Majors"> <input type="button" id='btn2' value="Business Majors"> 
              
  	<div id="result"></div>
 
@@ -30,7 +30,7 @@
             		var contents = "<table cellspacing='5'><tr><td>Name</td><td>Midterm</td><td>Final</td></tr>"
 					
             		for(i = 0; i < data.length; i++) {
-                     	contents += "<tr><td>" + data[i].name + "</td><td>" + data[i].midterm + "</td><td>" + data[i].final + "</td></tr>";
+                     	contents += "<tr><td>" + data[i].name + "<tr><td>" + data[i].Major + "</td><td>" + data[i].Midterm + "</td><td>" + data[i].Final + "</td></tr>";
                 	}
 					
                 	contents += "</table>";
